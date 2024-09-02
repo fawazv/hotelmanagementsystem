@@ -13,7 +13,8 @@ connectDB();
 app.use(express.json());
 
 // Use user routes
-app.use("/api/users", authRoute);
+app.use("/api/auth", authRoute);
+
 app.listen(port, () => {
   console.log("Connected to backend!");
 });
