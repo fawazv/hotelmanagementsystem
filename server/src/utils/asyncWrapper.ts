@@ -1,10 +1,11 @@
 import { Request, Response, NextFunction } from "express";
+import { CustomRequest } from "../middleware/authMiddleware";
 
 type AsyncFunction = (
-  req: Request,
+  req: CustomRequest,
   res: Response,
   next: NextFunction
-) => Promise<void>;
+) => Promise<any>;
 
 const asyncWrapper = (fn: AsyncFunction) => {
   return (req: Request, res: Response, next: NextFunction) => {
