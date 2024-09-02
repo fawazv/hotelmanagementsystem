@@ -8,7 +8,5 @@ const UserSchema = new mongoose.Schema({
   contactDetails: { type: String, required: true },
   email: { type: String, unique: true, required: true },
 });
-
-type User = InferSchemaType<typeof UserSchema>;
-
-export const User = mongoose.model<User>("User", UserSchema);
+export type IUser = InferSchemaType<typeof UserSchema>;
+export const User = mongoose.model<IUser>("User", UserSchema);
