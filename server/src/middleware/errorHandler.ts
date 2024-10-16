@@ -1,15 +1,15 @@
-import CustomError from "../utils/CustomError.js";
+import CustomError from "../utils/CustomError";
 import { Request, Response, NextFunction } from "express";
 
 type ErrorHandler = (
-  err: Error | CustomError,
+  err: unknown,
   req: Request,
   res: Response,
   next: NextFunction
 ) => void;
 
 const errorHandler: ErrorHandler = (err, req, res, next) => {
-  console.error(err.stack);
+  console.error((err as Error).stack);
 
   // Handle specific errors here if needed
   if (err instanceof CustomError) {
