@@ -12,8 +12,8 @@ import authMiddleware from "../middleware/authMiddleware";
 
 const router = express.Router();
 
-router.post("/register", authMiddleware, register);
-router.post("/create-admin", registerAdminAccount);
+router.post("/register", register);
+router.post("/create-admin", authMiddleware, registerAdminAccount);
 router.post("/login", login);
 router.get("/profile", authMiddleware, profile);
 router.patch("/resetpassword", authMiddleware, resetPassword);
