@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   role: { type: String, required: true },
   name: { type: String, required: true },
-  contactDetails: { type: String, required: true },
+  phoneNumber: { type: String, required: true },
   email: { type: String, unique: true, required: true },
 });
 export type IUser = InferSchemaType<typeof UserSchema>;
