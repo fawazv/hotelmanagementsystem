@@ -3,8 +3,6 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import CustomError from "../utils/CustomError";
 import asyncWrapper from "../utils/asyncWrapper";
-import { Request, Response, NextFunction } from "express";
-import { any } from "joi";
 
 // Register user
 export const register = asyncWrapper(async (req, res) => {
